@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans>
+        <!--        调用set方法赋值-->
+        <bean class="bean.Person" id="person1">
+            <property name="name" value="jan"></property>
+            <property name="age" value="20"></property>
+            <property name="sex" value="男"></property>
+        </bean>
+        <!--        调用构造器赋值-->
+        <bean class="bean.Person" id="person2">
+            <constructor-arg name="age" value="12"></constructor-arg>
+            <constructor-arg name="name" value="don"></constructor-arg>
+            <constructor-arg name="sex" value="男"></constructor-arg>
+
+        </bean>
+        <!--        用p名称空间为bean赋值-->
+        <!--            为了防止标签重复-->
+        <bean id="person3" class="bean.Person" p:name="lu" p:age="21" p:sex="男"></bean>
+
+    </beans>
+</beans>
